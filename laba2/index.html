@@ -1,0 +1,86 @@
+<html>
+<head>
+
+ 
+<title> Генерация </title>
+<meta name=description content=' '><meta name=keywords content=' '><meta http-equiv='content-type' content='text/html;' />
+<meta http-equiv='content-style-type' content='text/css' />
+ 
+<meta http-equiv='content-language' content='ru' /
+        <link rel="stylesheet" type="text/css" href="style.css" />
+ 
+ 
+<style type="text/css">
+ 
+.selected {
+    background-color: yellowgreen;
+}
+ 
+table {
+    background-color: beige;
+    border-collapse: collapse;
+}
+ 
+td {
+    text-align: center;
+    border: 1px solid black;
+    padding: 6px;
+}
+ 
+</style>
+ 
+<script type="text/javascript">
+ 
+var array_word = ['лес','нелес','дилара','маша','алеся','запятая','опять','случайно','почему','краб','гриб','саповски','бударин','фцфц	'];
+
+ 
+function getRandom(min,max){
+    return Math.floor(Math.random()*(max-min+1))+min;
+}
+ 
+function showTable(count_rows, count_cols) {
+    var htmlcode = '';
+    ROWS_SIZE = count_rows;
+    COLS_SIZE = count_cols;
+    for (var rows = 0; rows < count_rows; rows++) {
+        htmlcode += '<tr>\n';
+        for (var cols = 0; cols < count_cols; cols++) {
+            htmlcode += '<td id="td' + rows + cols + '">' + array_word[getRandom(0,array_word.length-1)] + '</td>'
+        }
+        htmlcode += '</tr>\n';
+    }
+    document.getElementById("main_table").innerHTML = htmlcode;
+}
+ 
+function toMark() {
+    for (var rows = 0; rows < ROWS_SIZE; rows++) {
+        for (var cols = 0; cols < COLS_SIZE; cols++) {
+		var n = document.getElementById("main_table").rows[rows].cells[cols].innerHTML;
+            if (n.indexOf('лес')!=-1)  {			
+                var elem = document.getElementById("td" + rows + cols);
+                elem.setAttribute("class","selected");
+            }
+        }
+    }
+}
+ 
+function checkSymbol(arraySymbol,str) {
+    var checkArr = [];
+    var sum = true;
+    var j=0;
+}
+ 
+ 
+</script>
+</head>
+ 
+<body onload="showTable(10,10)">
+<div align="center">
+    <table id="main_table">
+    </table>
+    <p>
+    <input type="button" value="Найти" onclick="toMark()">
+    <input type="button" value="Генерировать" onclick="showTable(10,10)">
+</div>
+</body>
+</html>
