@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>canvas</title>
+  <meta charset="utf-8">
+
+  <canvas id="smile" width="1048" height="720">
+    <p>Ваш браузер не поддерживает рисование.</p>
+  </canvas>
+
+<script type="text/javascript">
+    var myCanvas = document.getElementById('smile');
+
+     var cxt = myCanvas.getContext('2d');
+
+	cxt.lineWidth = 4; 
+	cxt.lineStyle = 'grey';
+	cxt.fillStyle="#000";
+	cxt.fillRect(15,15,460,360);
+
+
+//головка
+cxt.clearRect(85,38,130,60);
+cxt.strokeRect(85,38,130,60);
+cxt.strokeStyle ="#101010";
+cxt.lineWidth = 4; 
+cxt.stroke();
+
+cxt.lineWidth = 4; 
+cxt.strokeStyle = "#101010";
+cxt.clearRect(65,55,20,30);
+cxt.strokeRect(65,55,20,30);
+
+cxt.lineWidth = 4; 
+cxt.strokeStyle = "#101010";
+cxt.clearRect(215,55,20,30);
+cxt.strokeRect(215,55,20,30);
+
+//личико
+cxt.fillStyle = '#f00';
+cxt.fill();
+cxt.stroke();
+cxt.lineWidth = 4; 
+cxt.strokeStyle = "#101010";
+cxt.strokeRect(95,45,25,15);
+cxt.fillRect(95,45,25,15);
+
+cxt.fillStyle = '#f00';
+cxt.fill();
+cxt.stroke();
+cxt.lineWidth = 4; 
+cxt.strokeStyle = "#101010";
+cxt.strokeRect(180,45,25,15);
+cxt.fillRect(180,45,25,15);
+
+cxt.fillStyle = '#ff0';
+cxt.fill();
+cxt.stroke();
+cxt.lineWidth = 4;
+cxt.strokeStyle = "#101010";
+cxt.strokeRect(128,65,45,10);
+cxt.fillRect(128,65,45,10);
+
+
+cxt.lineWidth = 4;
+cxt.strokeStyle = "#101010";
+cxt.strokeRect(99,80,102,10);
+
+
+//туловко
+cxt.strokeStyle = "#101010";
+cxt.moveTo(100,100); 
+cxt.lineTo(200,100);
+cxt.lineTo(200,115);
+cxt.lineTo(225,115);	
+cxt.lineTo(225,275);
+cxt.lineTo(75,275);
+cxt.lineTo(75,115);
+cxt.lineTo(100,115);
+cxt.lineTo(100,100);
+cxt.stroke();
+cxt.fillStyle = '#3ED6FF';
+cxt.fill();
+cxt.stroke();
+
+//ручкиножки
+cxt.lineWidth = 4; 
+cxt.strokeStyle = "#101010";
+cxt.clearRect(25,110,60,35);
+cxt.strokeRect(25,110,60,35);
+
+cxt.lineWidth = 4; 
+cxt.strokeStyle = "#101010";
+cxt.clearRect(215,110,60,35);
+cxt.strokeRect(215,110,60,35);
+
+cxt.lineWidth = 4; 
+cxt.strokeStyle = "#101010";
+cxt.clearRect(70,265,35,60);
+cxt.strokeRect(70,265,35,60);
+
+cxt.lineWidth = 4; 
+cxt.strokeStyle = "#101010";
+cxt.clearRect(195,265,35,60);
+cxt.strokeRect(195,265,35,60);
+
+
+	//cxt.fillStyle="#FF0000";
+	//cxt.fillRect(50,160,105,65);
+
+
+	//cxt.lineWidth = 4; 
+ 	//cxt.strokeStyle = 'green';
+	//cxt.strokeRect(50,230,105,15);
+
+
+
+  </script>
+ </head>
+ <body>
+</html>
+
